@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Carrera</h1>
+<h2>creae carrera </h2>
+<form method="post">{%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Enviar</button>
+</form>
+
+{% endblock content %}

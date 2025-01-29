@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hola paguina principal</h1>
+
+<p>
+    {{saludo}}
+</p>
+
+<ul>
+    {% for val in lista %}
+    <li>{{val}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
