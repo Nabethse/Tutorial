@@ -10,7 +10,10 @@
 
 <ul>
     {% for val in lista %}
-    <li>{{val}}</li>
+    <li>{{val}}
+        <a href="{% url 'editar_carrera' carrera.pk %}">editar</a>
+        <a href="{% url 'eliminar_carrera' carrera.pk %}">eliminar</a>
+    </li>
     {% endfor %}
 </ul>
 

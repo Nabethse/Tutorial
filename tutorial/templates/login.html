@@ -1,0 +1,15 @@
+{% block content%}
+    {%if form.errors%}
+       <div>error en el usuario o contraseña</div>
+    {%end if%}
+    <form  method="post" action="{% url 'login'%}">
+        {%crsf_token%}
+         <div><label>usuario</label>
+          {{form .name}}
+
+          </div>
+        <div><label>password</label>
+        {{form.password}}
+        </div>
+        <button type="submit">ingresar</button>
+    </form>   

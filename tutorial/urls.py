@@ -18,7 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tutorial import view
-from tutorial.view import HomePageView, AboutPageView, CarreraCreateViewPage
+from tutorial.view import HomePageView, AboutPageView, CarreraCreateViewPage, CarreraEditarPageView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,8 @@ urlpatterns = [
     path('',HomePageView.as_view(), name='home'),
     path('about/',AboutPageView.as_view(), name='about'),
     path ('carrera/crear', CarreraCreateViewPage.as_view(), name='carrera.crear'),
+    path ("carrera/editar/<int:pk>/" , CarreraEditarPageView.as_view(), name="editar_carrera"),
+    path ('login/',auth_views.LoginView.as_view(template_name="login.html"),home='login'),
+    path ('logout',auth_views.LoginView.as_view(template_name="login.html",name='logout')),
+    
 ]

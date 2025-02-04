@@ -6,3 +6,4 @@ class FormCarrera (forms.ModelForm):
         model=carrera
         Fields = ["nombre","descripcion"]
         #Fiels="__al__"
+
